@@ -67,8 +67,6 @@ def test_case_1():
     #
     e = Repository(user=User("t-tanaka"))
     file_access_router = Locator(e, 5)
-    print(sample_txt_handler.get_path(file_access_router))
-    # data/5/sample_05.txt
 
     input_text = "Sample Text"
     write_sample_txt(input_text, file_access_router)

@@ -7,6 +7,14 @@ This sample `README.md` is intended to clarify the purpose, properties, and usag
 
 <hr>
 
+## install
+
+```shell
+pip install frieren
+```
+
+<hr>
+
 
 ## Structure
 
