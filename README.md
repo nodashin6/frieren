@@ -1,8 +1,15 @@
 # Frieren
 
-This library provides an abstract foundation for managing file saving and loading operations. It abstracts metadata, locators for file storage, and operators that handle file operations, enabling an extensible design. In cases such as data analysis, where file I/O is frequent, the library allows users to focus on programming without the hassle of manually setting file paths by determining them dynamically through routing.
+This library provides a simple and flexible foundation for managing file saving and loading. It allows users to focus on coding without worrying about file paths. File locations are determined automatically based on the context, so you don't need to set paths manually.
 
-This sample `README.md` is intended to clarify the purpose, properties, and usage of the classes, making it easier for users to understand the library.
+The core of the library is built around three main components:
+
+Metadata: Keeps track of additional information related to the files.
+Locators: Dynamically manage where files are stored.
+Operators: Handle the actual file operations like saving and loading.
+The design is extensible, allowing users to easily adapt it to their needs. This is especially useful in fields like data analysis, where frequent file input/output (I/O) is common. The library "freezes" (from the German word frieren, meaning "to freeze") the complexity of managing file paths, offering a structured and consistent approach. With this system, your file handling becomes as smooth and reliable as frozen operations.
+
+The goal of this README.md is to provide a clear overview of the classes and their usage. It should help users quickly grasp the purpose and properties of the library, making file management easier and more efficient.
 
 
 <hr>
@@ -12,6 +19,14 @@ This sample `README.md` is intended to clarify the purpose, properties, and usag
 ```shell
 pip install frieren
 ```
+
+Note: Since this module is still under development, we recommend specifying a version when installing to ensure compatibility. For example:
+
+```shell
+pip install frieren==0.1.0
+```
+
+By fixing the version, you can avoid unexpected issues that may arise from updates or changes in the library.
 
 <hr>
 
