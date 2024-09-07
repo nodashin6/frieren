@@ -14,18 +14,18 @@ class BaseOperator(ABC, Generic[LocatorT, MetadataT, FileT]):
     def __init__(self, metadata: MetadataT):
         self.metadata = metadata
 
-    def get_path(self, router: LocatorT) -> Path:
-        if not isinstance(router, self.LocatorClass):
+    def get_path(self, locator: LocatorT) -> Path:
+        if not isinstance(locator, self.LocatorClass):
             raise TypeError(f"Expected instance of {self.LocatorClass.__name__}")
-        path = router.get_path(self.metadata)
+        path = locator.get_path(self.metadata)
         return path
 
     @abstractmethod
     def save_file(self, obj: FileT, path: Path):
         pass
 
-    def write(self, obj: FileT, config: LocatorT):
-        path = self.get_path(config)
+    def write(self, obj: FileT, locator: LocatorT):
+        path = self.get_path(locator)
         path.parent.mkdir(exist_ok=True, parents=True)
         self.save_file(obj, path)
 
@@ -33,8 +33,8 @@ class BaseOperator(ABC, Generic[LocatorT, MetadataT, FileT]):
     def load_file(self, path: Path) -> FileT:
         pass
 
-    def read(self, config: LocatorT) -> FileT:
-        path = self.get_path(config)
+    def read(self, locator: LocatorT) -> FileT:
+        path = self.get_path(locator)
         return self.load_file(path)
 
 
