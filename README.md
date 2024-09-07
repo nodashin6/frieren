@@ -23,7 +23,7 @@ pip install frieren
 Note: Since this module is still under development, we recommend specifying a version when installing to ensure compatibility. For example:
 
 ```shell
-pip install frieren==0.1.0
+pip install frieren==0.1.1
 ```
 
 By fixing the version, you can avoid unexpected issues that may arise from updates or changes in the library.
