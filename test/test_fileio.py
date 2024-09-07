@@ -33,7 +33,7 @@ class Locator(BaseLocator[Repository, Metadata]):
 
     @property
     def save_dir(self):
-        return self.e.data / f"{self.x:0>1}"
+        return self.repository.data / f"{self.x:0>1}"
 
     def get_path(self, metadata: Metadata):
         return self.save_dir / metadata.filename.replace(
@@ -65,8 +65,8 @@ def test_case_1():
     #
     # user scripts
     #
-    e = Repository(user=User("t-tanaka"))
-    file_access_router = Locator(e, 5)
+    repository = Repository(user=User("t-tanaka"))
+    file_access_router = Locator(repository, x=5)
 
     input_text = "Sample Text"
     write_sample_txt(input_text, file_access_router)

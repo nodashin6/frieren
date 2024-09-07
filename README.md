@@ -80,7 +80,7 @@ classDiagram
     
     class BaseLocator {
         <<abstract>>
-        -e: RepositoryT
+        -repository: RepositoryT
         +save_dir() Path
         +get_path(metadata: MetadataT) Path
     }
