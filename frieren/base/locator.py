@@ -10,7 +10,7 @@ from .metadata import MetadataT
 
 @dataclass
 class BaseLocator(Generic[RepositoryT, MetadataT]):
-    e: RepositoryT
+    repository: RepositoryT
 
     @property
     @abstractmethod
